@@ -1,8 +1,8 @@
 # cf-worker-telegram-channel-config
-the cg worker code can get eny type of config from eny telegram channel
+the cf worker code can get eny type of config from eny telegram channel
 
 #How set cloudflare worker?
-1. Make cloude flare account and make new worker next click Quik Edit
+1. Make cloud flare account and make new worker next click Quik Edit
 2. Copy and Paste CF-Collector.ts
 3. Save and Deploy
 4. Finish 🙃

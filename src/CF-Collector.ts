@@ -1,4 +1,18 @@
-// 
+/***************************************************************************************/
+/*                                                                                     */
+/*   _   _       _  ______          _       _____ _               _                    */
+/*  | \ | |     | | | ___ \        (_)     /  ___| |             | |                   */
+/*  |  \| | ___ | |_| |_/ /_      ___ _ __ \ `--.| |__   __ _  __| | _____      __     */
+/*  | . ` |/ _ \| __|    /\ \ /\ / / | '_ \ `--. \ '_ \ / _` |/ _` |/ _ \ \ /\ / /     */
+/*  | |\  | (_) | |_| |\ \ \ V  V /| | | | /\__/ / | | | (_| | (_| | (_) \ V  V /      */
+/*  \_| \_/\___/ \__\_| \_| \_/\_/ |_|_| |_\____/|_| |_|\__,_|\__,_|\___/ \_/\_/       */
+/*                                                                                     */
+/*                                                                                     */
+/*                                t.me/notrwinshadow                                   */
+/*                                                                                     */
+/***************************************************************************************/                                                                                   
+                                                                              
+
 
 const DefaultChannels = "nim_vpn_ir,hope_net,vpn_ioss,proxystore11,outline_vpn"
 
@@ -35,16 +49,19 @@ async function extractCodeText(decodedText) {
     allCodeText += codeText + '\n';
   }
 
-  allCodeText = allCodeText
+  allCodeText = decodeURIComponent(allCodeText);
+
+  const lines = allCodeText.split('\n');
+
+  let lastSixLines = lines.slice(-6).join('\n');
+
+  lastSixLines = lastSixLines
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
-    .replace(/&#039;/g, "'");
-
-  const lines = allCodeText.split('\n');
-
-  const lastSixLines = lines.slice(-6).join('\n');
+    .replace(/&#039;/g, "'")
+    .replace(/<br\/>/g, '\n');
   
   return lastSixLines;
 }

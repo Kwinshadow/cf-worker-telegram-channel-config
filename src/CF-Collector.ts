@@ -49,8 +49,6 @@ async function extractCodeText(decodedText) {
     allCodeText += codeText + '\n';
   }
 
-  allCodeText = decodeURIComponent(allCodeText);
-
   const lines = allCodeText.split('\n');
 
   let lastSixLines = lines.slice(-6).join('\n');

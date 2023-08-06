@@ -35,6 +35,13 @@ async function extractCodeText(decodedText) {
     allCodeText += codeText + '\n';
   }
 
+  allCodeText = allCodeText
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'");
+
   const lines = allCodeText.split('\n');
 
   const lastSixLines = lines.slice(-6).join('\n');
